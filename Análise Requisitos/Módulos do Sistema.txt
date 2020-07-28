@@ -1,3 +1,4 @@
+(GRUPO 1 - )------------------------------------------------------------------------
 Login:
 	Cadastro de usuarios
 	Validação de Login
@@ -6,11 +7,19 @@ Login:
 	Controle de permissões:
 		Tela de definição de permissões do sistema, e aplicação destas permissões nos módulos do sistema.
 
+(GRUPO 2 - )------------------------------------------------------------------------
 Cadastro de Tipos de Produtos (Orgânico, Agroecológico...)
     Nome
 	
 	Tela de busca do CRUD de tipos de produto
+
+Cadastro de Certificadora:
+	Nome
+	(Ver outras infos importantes na próxima reunião)
 	
+	Com pesquisa do CRUD
+	
+(GRUPO 3 - )------------------------------------------------------------------------	
 Cadastro de Produtos:
     Nome
 	Descrição
@@ -19,13 +28,8 @@ Cadastro de Produtos:
 	Unidade
 	
 	Tela de busca do CRUD de produtos
-	
-Cadastro de Certificadora:
-	Nome
-	Ver outras infos importantes
-	
-	Com pesquisa do CRUD
 
+(GRUPO 4 - )------------------------------------------------------------------------	
 Cadastro de grupo de produtores/associação/cooperativa:
     Nome
 	Endereço
@@ -34,7 +38,8 @@ Cadastro de grupo de produtores/associação/cooperativa:
 	Distribuidor de produto ()Sim ()Não
 	
 	Com pesquisa do CRUD
-	
+
+(GRUPO 5 - )------------------------------------------------------------------------	
 Cadastro Produtores:
 	Nome completo do(a) representante da família
 	Nome da propriedade
