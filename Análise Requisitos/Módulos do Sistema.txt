@@ -5,6 +5,35 @@ Login:
 	
 	Controle de permissões:
 		Tela de definição de permissões do sistema, e aplicação destas permissões nos módulos do sistema.
+
+Cadastro de Tipos de Produtos (Orgânico, Agroecológico...)
+    Nome
+	
+	Tela de busca do CRUD de tipos de produto
+	
+Cadastro de Produtos:
+    Nome
+	Descrição
+	Tipo (Chave estrangeira)
+	Preço
+	Unidade
+	
+	Tela de busca do CRUD de produtos
+	
+Cadastro de Certificadora:
+	Nome
+	Ver outras infos importantes
+	
+	Com pesquisa do CRUD
+
+Cadastro de grupo de produtores/associação/cooperativa:
+    Nome
+	Endereço
+	CNPJ
+	IE
+	Distribuidor de produto ()Sim ()Não
+	
+	Com pesquisa do CRUD
 	
 Cadastro Produtores:
 	Nome completo do(a) representante da família
@@ -24,30 +53,6 @@ Cadastro Produtores:
 	
 	Tela de busca de produtores:
 		Pesquisa de produtores por faixa de preço, produto, localização, produtor, tipo do produto	
-	
-Cadastro de Produtos:
-    Nome
-	Descrição
-	Tipo (Orgânico, Agroecológico...)
-	Preço
-	Unidade
-	
-	Tela de busca do CRUD de produtos
-	
-Cadastro de Certificadora:
-	Nome
-	Ver outras infos importantes
-	
-	Com pesquisa do CRUD
-	
-Cadastro de grupo/associação/cooperativa:
-    Nome
-	Endereço
-	CNPJ
-	IE
-	Distribuidor de produto ()Sim ()Não
-	
-	Com pesquisa do CRUD
-	
+		
 	
 Contatos: Eric Gustavo Cardin <eric_cardin@hotmail.com>	
