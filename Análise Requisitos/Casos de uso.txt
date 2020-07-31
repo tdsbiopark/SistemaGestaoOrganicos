@@ -1,0 +1,20 @@
+ATORES DO SISTEMA
+- Clientes
+	CONSULTAR produtos
+	Recuperar de senha
+	Fazer Login
+
+- Usuário ( ADMINISTRADORES DO SISTEMA)
+	MANTER de usuarios	
+	MANTER Controle de permissões:
+	MANTER (CADASTRAR, CONSULTAR, ALTERAR e DELETAR) Tipos de Produtos
+	MANTER (CADASTRAR, CONSULTAR, ALTERAR e DELETAR) Certificadora
+	MANTER (CADASTRAR, CONSULTAR, ALTERAR, DELETAR)de produtos
+	MANTER grupo de GRUPO (associação/cooperativa)
+	MANTER Produtores
+	MANTER Certificadora 
+	MANTER Pontos de venda
+
+
+- Produtores
+	MANTER ( CADASTRAR, CONSULTAR, ALTERAR, DELETAR, PAUSAR )VÍNCULO COM produtos
