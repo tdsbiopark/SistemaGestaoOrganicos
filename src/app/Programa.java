@@ -5,6 +5,8 @@
  */
 package app;
 
+import model.entidades.Usuario;
+
 /**
  *
  * @author Andre
@@ -13,6 +15,12 @@ public class Programa
 {
     public static void main(String[] args)
     {
-	System.out.println("ola mundo");
+	Usuario user1 = new Usuario(1, "Jorge","bahia","12345", true);
+	
+	System.out.println(user1.getNome());
+	
+	System.out.println("-----------------------------");
+	
+	System.out.println(user1.toString());
     }
 }
