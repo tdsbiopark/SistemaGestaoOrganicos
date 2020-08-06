@@ -136,7 +136,7 @@ public class Usuario
     {
 	
 	
-	return "Usuario{" + "id=" + id + ", \nnome=" + nome + ", \nlogin=" + login + ", \nsenha=" + senha + ", \nativo=" + ativo + ", \npermissaoUsuario=" + permissaoUsuario + '}';
+	return "Usuario{" + "id=" + id + ", \nnome=" + nome + ", \nlogin=" + login + ", \nsenha=" + senha + ", \nativo=" + ativo + ", \n   permissaoUsuario=" + permissaoUsuario + '}';
     }
     
     
