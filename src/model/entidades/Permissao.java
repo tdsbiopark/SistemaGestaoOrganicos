@@ -5,11 +5,13 @@
  */
 package model.entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Andre
  */
-public class Permissao
+public class Permissao implements Serializable
 {
 
     private int id;

@@ -5,6 +5,7 @@
  */
 package model.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ import java.util.Objects;
  *
  * @author Andre
  */
-public class Usuario
+public class Usuario implements Serializable
 {
     private int id;
     private String nome;

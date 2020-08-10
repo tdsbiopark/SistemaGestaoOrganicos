@@ -5,13 +5,14 @@
  */
 package model.entidades;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Andre
  */
-public class PermissaoUsuario
+public class PermissaoUsuario implements Serializable
 {
   
     private Permissao permissao;
