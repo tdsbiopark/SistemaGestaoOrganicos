@@ -20,8 +20,7 @@ public class Grupo implements Serializable
     private String nome;
     private String endereco;
     private int numero;
-    private String bairro;
-    private int cidade_id;
+    private String bairro;    
     private String cnpj;
     private String inscricao_estadual;
     private boolean distribuidor_produtos;
@@ -35,14 +34,13 @@ public class Grupo implements Serializable
     {
     }
 
-    public Grupo(int id, String nome, String endereco, int numero, String bairro, int cidade_id, String cnpj, String inscricao_estadual, boolean distribuidor_produtos, boolean registro_ativo, Cidade cidade)
+    public Grupo(int id, String nome, String endereco, int numero, String bairro, String cnpj, String inscricao_estadual, boolean distribuidor_produtos, boolean registro_ativo, Cidade cidade)
     {
 	this.id = id;
 	this.nome = nome;
 	this.endereco = endereco;
 	this.numero = numero;
 	this.bairro = bairro;
-	this.cidade_id = cidade_id;
 	this.cnpj = cnpj;
 	this.inscricao_estadual = inscricao_estadual;
 	this.distribuidor_produtos = distribuidor_produtos;
@@ -98,16 +96,6 @@ public class Grupo implements Serializable
     public void setBairro(String bairro)
     {
 	this.bairro = bairro;
-    }
-
-    public int getCidade_id()
-    {
-	return cidade_id;
-    }
-
-    public void setCidade_id(int cidade_id)
-    {
-	this.cidade_id = cidade_id;
     }
 
     public String getCnpj()
@@ -209,7 +197,7 @@ public class Grupo implements Serializable
     @Override
     public String toString()
     {
-	return "Grupo{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cidade_id=" + cidade_id + ", cnpj=" + cnpj + ", inscricao_estadual=" + inscricao_estadual + ", distribuidor_produtos=" + distribuidor_produtos + ", registro_ativo=" + registro_ativo + ", cidade=" + cidade + ", produtor=" + produtor + '}';
+	return "Grupo{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cnpj=" + cnpj + ", inscricao_estadual=" + inscricao_estadual + ", distribuidor_produtos=" + distribuidor_produtos + ", registro_ativo=" + registro_ativo + ", cidade=" + cidade + ", produtor=" + produtor + '}';
     }
     
     
