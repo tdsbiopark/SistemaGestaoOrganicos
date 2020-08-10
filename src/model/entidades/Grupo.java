@@ -28,7 +28,7 @@ public class Grupo implements Serializable
     
     private Cidade cidade;
     
-    private ArrayList<Produtor> produtor = new ArrayList<Produtor>();
+    private ArrayList<Produtor> produtores = new ArrayList<Produtor>();
 
     public Grupo()
     {
@@ -148,14 +148,14 @@ public class Grupo implements Serializable
 	this.cidade = cidade;
     }
 
-    public ArrayList<Produtor> getProdutor()
+    public ArrayList<Produtor> getProdutores()
     {
-	return produtor;
+	return produtores;
     }
 
-    public void setProdutor(ArrayList<Produtor> produtor)
+    public void setProdutores(ArrayList<Produtor> produtores)
     {
-	this.produtor = produtor;
+	this.produtores = produtores;
     }
 
     @Override
@@ -197,7 +197,7 @@ public class Grupo implements Serializable
     @Override
     public String toString()
     {
-	return "Grupo{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cnpj=" + cnpj + ", inscricao_estadual=" + inscricao_estadual + ", distribuidor_produtos=" + distribuidor_produtos + ", registro_ativo=" + registro_ativo + ", cidade=" + cidade + ", produtor=" + produtor + '}';
+	return "Grupo{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cnpj=" + cnpj + ", inscricao_estadual=" + inscricao_estadual + ", distribuidor_produtos=" + distribuidor_produtos + ", registro_ativo=" + registro_ativo + ", cidade=" + cidade + ", produtor=" + produtores + '}';
     }
     
     

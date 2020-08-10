@@ -20,7 +20,7 @@ public class Certificadora implements Serializable
     private String nome;
     private boolean registro_ativo;
     
-    private ArrayList<Produtor> produtor = new ArrayList<Produtor>();
+    private ArrayList<Produtor> produtores = new ArrayList<Produtor>();
 
     public Certificadora()
     {
@@ -63,14 +63,14 @@ public class Certificadora implements Serializable
 	this.registro_ativo = registro_ativo;
     }
 
-    public ArrayList<Produtor> getProdutor()
+    public ArrayList<Produtor> getProdutores()
     {
-	return produtor;
+	return produtores;
     }
 
-    public void setProdutor(ArrayList<Produtor> produtor)
+    public void setProdutores(ArrayList<Produtor> produtores)
     {
-	this.produtor = produtor;
+	this.produtores = produtores;
     }
 
     @Override
@@ -112,7 +112,7 @@ public class Certificadora implements Serializable
     @Override
     public String toString()
     {
-	return "Certificadora{" + "id=" + id + ", nome=" + nome + ", registro_ativo=" + registro_ativo + ", produtor=" + produtor + '}';
+	return "Certificadora{" + "id=" + id + ", nome=" + nome + ", registro_ativo=" + registro_ativo + ", produtor=" + produtores + '}';
     }
     
     

@@ -20,7 +20,11 @@ public class Cidade implements Serializable
 
     private Estado estado;
 
-    private ArrayList<Produtor> produtor = new ArrayList<Produtor>();
+    private ArrayList<Grupo> grupos = new ArrayList<Grupo>();
+    
+    private ArrayList<Produtor> produtores = new ArrayList<Produtor>();
 
     private ArrayList<PontosVenda> pontosVenda = new ArrayList<PontosVenda>();
+        
+    
 }
