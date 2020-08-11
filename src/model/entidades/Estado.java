@@ -112,7 +112,7 @@ public class Estado implements Serializable
     @Override
     public String toString()
     {
-	return "Estado{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + ", cidade=" + cidades + '}';
+	return "\nEstado{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + ", cidade=" + cidades + '}';
     }
     
     

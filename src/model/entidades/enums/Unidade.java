@@ -9,23 +9,40 @@ package model.entidades.enums;
 //ao retornar do banco converte de codigo para o enum correspondente
 
 /**
- *
+ * Unidades de medita com tipos enumerados
  * @author Andre
  */
 public enum Unidade
 {
+    /**
+     * Sem unidade definida
+     */
+    SU(0), 
+    /**
+     * Unidade
+     */
     UN(1), 
+    /**
+     * Kilograma
+     */
     Kg(2),
+    /**
+     * Grama 
+     */
     g(3),
+    /**
+     * Metro
+     */
     m(4),
+    /**
+     * Caixa
+     */
     CAIXA(5),
     LITRO(6),
     PACOTE(7),
-    SACO(8),
     BANDEJA(8),
-    MOLHO(10);
+    MOLHO(9);
 
-    //=============================================================
     private int codigo;
 
     private Unidade(int codigo)
