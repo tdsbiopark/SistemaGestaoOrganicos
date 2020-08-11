@@ -8,6 +8,7 @@ package model.entidades;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+import model.entidades.enums.Unidade;
 
 /**
  *
@@ -20,7 +21,10 @@ public class Produto implements Serializable
     private String nome;
     private String descricao;
     private Double preco_unitario;
-    private String unidade;
+    
+    //Usa enums para defnir as unidades
+    private Integer unidade;
+    
     private boolean registro_ativo;
     
     private TipoProduto tipoproduto;
@@ -31,13 +35,14 @@ public class Produto implements Serializable
     {
     }
 
-    public Produto(int id, String nome, String descricao, Double preco_unitario, String unidade, boolean registro_ativo, TipoProduto tipoproduto)
+    public Produto(int id, String nome, String descricao, Double preco_unitario, Unidade unidade, boolean registro_ativo, TipoProduto tipoproduto)
     {
 	this.id = id;
 	this.nome = nome;
 	this.descricao = descricao;
 	this.preco_unitario = preco_unitario;
-	this.unidade = unidade;
+	//usa enums:
+	setUnidade(unidade);
 	this.registro_ativo = registro_ativo;
 	this.tipoproduto = tipoproduto;
     }
@@ -80,16 +85,22 @@ public class Produto implements Serializable
     public void setPreco_unitario(Double preco_unitario)
     {
 	this.preco_unitario = preco_unitario;
+    }    
+    
+    // converte o codigo para o enum
+    public Unidade getUnidade()
+    {
+	return Unidade.valueOf(unidade);
     }
 
-    public String getUnidade()
+    // recebe um enum e grava o codigo
+    public void setUnidade(Unidade unidade)
     {
-	return unidade;
-    }
-
-    public void setUnidade(String unidade)
-    {
-	this.unidade = unidade;
+	if (unidade != null)
+	{
+	    this.unidade = unidade.getCode();
+	}
+	
     }
 
     public boolean isRegistro_ativo()
@@ -161,9 +172,10 @@ public class Produto implements Serializable
     @Override
     public String toString()
     {
-	return "Produto{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", preco_unitario=" + preco_unitario + ", unidade=" + unidade + ", registro_ativo=" + registro_ativo + ", tipoproduto=" + tipoproduto + ", ProdutorProdutos=" + ProdutorProdutos + '}';
+	return "Produto{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", preco_unitario=" + preco_unitario + ", unidade=" + getUnidade() + ", registro_ativo=" + registro_ativo + ", tipoproduto=" + tipoproduto + ", ProdutorProdutos=" + ProdutorProdutos + '}';
     }
-    
+
+
     
     
 }
