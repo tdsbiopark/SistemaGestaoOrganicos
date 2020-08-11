@@ -27,9 +27,17 @@ public class TesteProdutor
 	//CADASTRO DE PRODUTO:
 	Produto produto1 = new Produto(1, "Alface Crespa", "Alface Crespa", 2.85, Unidade.UN, true, tipoProduto1);
 	Produto produto2 = new Produto(2, "Alface Americana", "Alface Americana", 3.55, Unidade.UN, true, tipoProduto1);
+	Produto produto3 = new Produto(3, "Mandioca BR", "Mandioca tipo Branca", 5.81, Unidade.Kg, true, tipoProduto1);
+	Produto produto4 = new Produto(4, "Milho", "Milho 6 Espiga bandeja", 7.55, Unidade.BANDEJA, true, tipoProduto1);
 	
-	
+	System.out.println("-----------------------------");
 	System.out.println(produto1.toString());
+	System.out.println(produto2.toString());
+	System.out.println(produto3.toString());
+	System.out.println(produto4.toString());
+	
+	
+	
 	
 	
 	//CADASTRO DE PRODUTOR:

@@ -14,7 +14,7 @@ package model.entidades.enums;
  */
 public enum Unidade
 {
-    UN(1),
+    UN(1), 
     Kg(2),
     g(3),
     m(4),
@@ -22,29 +22,31 @@ public enum Unidade
     LITRO(6),
     PACOTE(7),
     SACO(8),
-    MOLHO(9);
+    BANDEJA(8),
+    MOLHO(10);
 
-    private int code;
+    //=============================================================
+    private int codigo;
 
-    private Unidade(int code)
+    private Unidade(int codigo)
     {
-	this.code = code;
+	this.codigo = codigo;
     }
 
-    public int getCode()
+    public int getCodigo()
     {
-	return code;
+	return codigo;
     }
 
-    public static Unidade valueOf(int code)
+    public static Unidade valueOf(int codigo)
     {
 	for (Unidade value : Unidade.values())
 	{
-	    if (value.getCode() == code)
+	    if (value.getCodigo() == codigo)
 	    {
 		return value;
 	    }
 	}
-	throw new IllegalArgumentException("Codigo da Unidade Inválida");
-    }
+	throw new IllegalArgumentException("Código da Unidade Inválida!");
+    } 
 }

@@ -98,7 +98,7 @@ public class Produto implements Serializable
     {
 	if (unidade != null)
 	{
-	    this.unidade = unidade.getCode();
+	    this.unidade = unidade.getCodigo();
 	}
 	
     }
