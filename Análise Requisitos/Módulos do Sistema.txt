@@ -1,4 +1,4 @@
-(GRUPO 1 - Jonas e Allan)------------------------------------------------------------------------
+(GRUPO 1 - )------------------------------------------------------------------------
 Login:
 	Cadastro de usuarios
 	Validação de Login
@@ -7,7 +7,7 @@ Login:
 	Controle de permissões:
 		Tela de definição de permissões do sistema, e aplicação destas permissões nos módulos do sistema.
 
-(GRUPO 2 - Ivanilson e Jorge)------------------------------------------------------------------------
+(GRUPO 2 - )------------------------------------------------------------------------
 Cadastro de Tipos de Produtos (Orgânico, Agroecológico...)
     Nome
 	
@@ -19,7 +19,7 @@ Cadastro de Certificadora:
 	
 	Com pesquisa do CRUD
 	
-(GRUPO 3 - Lucas e Eduardo)------------------------------------------------------------------------	
+(GRUPO 3 - )------------------------------------------------------------------------	
 Cadastro de Produtos:
     Nome
 	Descrição
@@ -39,7 +39,7 @@ Cadastro de grupo de produtores/associação/cooperativa:
 	
 	Com pesquisa do CRUD
 
-(GRUPO 5 - André e Maycon)------------------------------------------------------------------------	
+(GRUPO 5 - )------------------------------------------------------------------------	
 Cadastro Produtores:
 	Nome completo do(a) representante da família
 	Nome da propriedade
