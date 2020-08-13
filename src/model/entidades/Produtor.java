@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class Produtor implements Serializable
 {
-
+  
     private int id;
     private String nome;
     private String nome_propriedade;

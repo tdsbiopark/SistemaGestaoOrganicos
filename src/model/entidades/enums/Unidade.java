@@ -43,7 +43,10 @@ public enum Unidade
     LITRO(6),
     PACOTE(7),
     BANDEJA(8),
-    MOLHO(9);
+    MOLHO(9),
+    SACO(10);
+    
+    
 
     private int codigo;
 
