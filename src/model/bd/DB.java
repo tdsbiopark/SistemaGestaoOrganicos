@@ -26,7 +26,7 @@ public class DB
 	{
 	    try
 	    {
-		conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5433/dbOrganicos", "postgres", "inside@1");
+		conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbOrganicos", "postgres", "12345678");
 	    }
 	    catch (SQLException e)
 	    {
