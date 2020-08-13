@@ -13,7 +13,7 @@ public class ProdutorProduto implements Serializable {
     private int id;
     private Produtor produtor;
     private Produto produto;
-    private PontosVenda pontosVenda;
+    private PostosVenda postosVenda;
     private Date diaSemana;
 
     //Construtor vazio
@@ -21,11 +21,11 @@ public class ProdutorProduto implements Serializable {
     }
 
     //Construtor Completo
-    public ProdutorProduto(int id, Produtor produtor, Produto produto, PontosVenda pontosVenda, Date diaSemana) {
+    public ProdutorProduto(int id, Produtor produtor, Produto produto, PostosVenda pontosVenda, Date diaSemana) {
         this.id = id;
         this.produtor = produtor;
         this.produto = produto;
-        this.pontosVenda = pontosVenda;
+        this.postosVenda = pontosVenda;
         this.diaSemana = diaSemana;
     }
 
@@ -54,12 +54,12 @@ public class ProdutorProduto implements Serializable {
         this.produto = produto;
     }
 
-    public PontosVenda getPontosVenda() {
-        return pontosVenda;
+    public PostosVenda getPostosVenda() {
+        return postosVenda;
     }
 
-    public void setPontosVenda(PontosVenda pontosVenda) {
-        this.pontosVenda = pontosVenda;
+    public void setPostosVenda(PostosVenda pontosVenda) {
+        this.postosVenda = postosVenda;
     }
 
     public Date getDiaSemana() {
@@ -77,7 +77,7 @@ public class ProdutorProduto implements Serializable {
         hash = 37 * hash + this.id;
         hash = 37 * hash + Objects.hashCode(this.produtor);
         hash = 37 * hash + Objects.hashCode(this.produto);
-        hash = 37 * hash + Objects.hashCode(this.pontosVenda);
+        hash = 37 * hash + Objects.hashCode(this.postosVenda);
         hash = 37 * hash + Objects.hashCode(this.diaSemana);
         return hash;
     }
@@ -103,7 +103,7 @@ public class ProdutorProduto implements Serializable {
         if (!Objects.equals(this.produto, other.produto)) {
             return false;
         }
-        if (!Objects.equals(this.pontosVenda, other.pontosVenda)) {
+        if (!Objects.equals(this.postosVenda, other.postosVenda)) {
             return false;
         }
         if (!Objects.equals(this.diaSemana, other.diaSemana)) {
@@ -115,7 +115,7 @@ public class ProdutorProduto implements Serializable {
     //ToString
     @Override
     public String toString() {
-        return "ProdutorProduto{" + "id=" + id + ", produtor=" + produtor + ", produto=" + produto + ", pontosVenda=" + pontosVenda + ", diaSemana=" + diaSemana + '}';
+        return "ProdutorProduto{" + "id=" + id + ", produtor=" + produtor + ", produto=" + produto + ", pontosVenda=" + postosVenda + ", diaSemana=" + diaSemana + '}';
     }
 
 }

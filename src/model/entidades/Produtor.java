@@ -1,5 +1,6 @@
 package model.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,7 +8,7 @@ import java.util.Objects;
  *
  * @author maycon
  */
-public class Produtor {
+public class Produtor implements Serializable {
 
     private int id;
 
