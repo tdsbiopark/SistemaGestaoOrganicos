@@ -20,7 +20,7 @@ public class DB
 
     private static Connection conexao = null;
 
-    public Connection getConection() 
+    public static Connection getConection() 
     {
 	if (conexao == null)
 	{
