@@ -6,10 +6,12 @@
 package model.entidades.enums;
 
 //No banco é gravao o codigo do enum
-//ao retornar do banco converte de codigo para o enum correspondente
+import java.util.ArrayList;
 
+//ao retornar do banco converte de codigo para o enum correspondente
 /**
  * Unidades de medita com tipos enumerados
+ *
  * @author Andre
  */
 public enum Unidade
@@ -17,17 +19,17 @@ public enum Unidade
     /**
      * Sem unidade definida
      */
-    SU(0), 
+    SU(0),
     /**
      * Unidade
      */
-    UN(1), 
+    UN(1),
     /**
      * Kilograma
      */
     Kg(2),
     /**
-     * Grama 
+     * Grama
      */
     g(3),
     /**
@@ -65,5 +67,17 @@ public enum Unidade
 	    }
 	}
 	throw new IllegalArgumentException("Código da Unidade Inválida!");
-    } 
+    }
+
+    /**
+     * retorna um lista dos enums
+     * @return 
+     */
+    public ArrayList<Unidade> getLisUnidadade()
+    {
+	
+	
+	
+	return null;
+    }
 }
