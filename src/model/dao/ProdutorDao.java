@@ -242,7 +242,7 @@ public class ProdutorDao
 		Grupo grup = instanciaGrupo(rs);
 		Cidade cid = instanciaCidade(rs);
 
-		// VENDEDOR:
+		// PRODUTOR:
 		Produtor obj = instanciaProdutor(rs, cert, grup, cid);
 
 		return obj;
@@ -279,7 +279,7 @@ public class ProdutorDao
      */
     private Produtor instanciaProdutor(ResultSet rs, Certificadora cert, Grupo grupo, Cidade cidade) throws SQLException
     {
-	// VENDEDOR
+	// PRODUTOR
 	Produtor obj = new Produtor();
 	obj.setCertificadora(cert);
 	obj.setGrupo(grupo);
