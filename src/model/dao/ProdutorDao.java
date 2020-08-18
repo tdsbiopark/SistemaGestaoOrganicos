@@ -279,7 +279,7 @@ public class ProdutorDao
      */
     private Produtor instanciaProdutor(ResultSet rs, Certificadora cert, Grupo grupo, Cidade cidade) throws SQLException
     {
-	// PRODUTOR
+	//PRODUTOR
 	Produtor obj = new Produtor();
 	obj.setCertificadora(cert);
 	obj.setGrupo(grupo);
