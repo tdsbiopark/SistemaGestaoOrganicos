@@ -198,6 +198,7 @@ public class ProdutorDao
 	}
     }
 
+    //PAREI AQUI!!
     public List<Produtor> findAll(Integer id)
     {
 	return null;
