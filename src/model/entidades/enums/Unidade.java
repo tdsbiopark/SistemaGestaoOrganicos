@@ -19,7 +19,7 @@ public enum Unidade
     /**
      * Sem unidade definida
      */
-    SU(0),
+    NAO_DEFINIDO(0),
     /**
      * Unidade
      */
@@ -45,8 +45,6 @@ public enum Unidade
     BANDEJA(8),
     MOLHO(9),
     SACO(10);
-    
-    
 
     private int codigo;
 
@@ -60,8 +58,13 @@ public enum Unidade
 	return codigo;
     }
 
-    public static Unidade valueOf(int codigo)
+    public static Unidade valueOf(Integer codigo)
     {
+	if (codigo == null)
+	{
+	    return Unidade.NAO_DEFINIDO;
+	}
+
 	for (Unidade value : Unidade.values())
 	{
 	    if (value.getCodigo() == codigo)
@@ -69,18 +72,23 @@ public enum Unidade
 		return value;
 	    }
 	}
-	throw new IllegalArgumentException("Código da Unidade Inválida!");
+	throw new IllegalArgumentException("Código da Unidade de medida Inválida!");
     }
 
     /**
      * retorna um lista dos enums
-     * @return 
+     *
+     * @return
      */
-    public ArrayList<Unidade> getLisUnidadade()
+    public ArrayList<Unidade> getEnumsUnidadade()
     {
-	
-	
-	
-	return null;
+	ArrayList<Unidade> list = new ArrayList<>();
+
+	for (Unidade und : Unidade.values())
+	{
+	    list.add(und);
+	}
+
+	return list;
     }
 }

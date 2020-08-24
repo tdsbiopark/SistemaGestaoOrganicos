@@ -270,7 +270,7 @@ public class ProdutorDao
     }
 
     //===============================================================================
-    // METODOS AUXILIARES PARA INSTANCIAR OBJETOS
+    // METODOS AUXILIARES PARA INSTANCIAR OBJETOS - Separar em um Helper!!!
     //===============================================================================
     
     /**
