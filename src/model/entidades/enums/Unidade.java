@@ -14,8 +14,7 @@ import java.util.ArrayList;
  *
  * @author Andre
  */
-public enum Unidade
-{
+public enum Unidade {
     /**
      * Sem unidade definida
      */
@@ -45,42 +44,33 @@ public enum Unidade
     BANDEJA(8),
     MOLHO(9),
     SACO(10);
-    
-    
 
     private int codigo;
 
-    private Unidade(int codigo)
-    {
-	this.codigo = codigo;
+    private Unidade(int codigo) {
+        this.codigo = codigo;
     }
 
-    public int getCodigo()
-    {
-	return codigo;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public static Unidade valueOf(int codigo)
-    {
-	for (Unidade value : Unidade.values())
-	{
-	    if (value.getCodigo() == codigo)
-	    {
-		return value;
-	    }
-	}
-	throw new IllegalArgumentException("Código da Unidade Inválida!");
+    public static Unidade valueOf(int codigo) {
+        for (Unidade value : Unidade.values()) {
+            if (value.getCodigo() == codigo) {
+                return value;
+            }
+        }
+        throw new IllegalArgumentException("Código da Unidade Inválida!");
     }
 
     /**
      * retorna um lista dos enums
-     * @return 
+     *
+     * @return
      */
-    public ArrayList<Unidade> getLisUnidadade()
-    {
-	
-	
-	
-	return null;
+    public ArrayList<Unidade> getLisUnidadade() {
+
+        return null;
     }
 }
