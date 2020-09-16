@@ -14,7 +14,8 @@ import java.util.ArrayList;
  *
  * @author Andre
  */
-public enum Unidade {
+public enum Unidade
+{
     /**
      * Sem unidade definida
      */
@@ -47,22 +48,22 @@ public enum Unidade {
 
     private int codigo;
 
-    private Unidade(int codigo) {
-        this.codigo = codigo;
+    private Unidade(int codigo)
+    {
+	this.codigo = codigo;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCodigo()
+    {
+	return codigo;
     }
 
-<<<<<<< HEAD
     public static Unidade valueOf(Integer codigo)
     {
 	if (codigo == null)
 	{
 	    return Unidade.NAO_DEFINIDO;
 	}
-
 	for (Unidade value : Unidade.values())
 	{
 	    if (value.getCodigo() == codigo)
@@ -71,15 +72,18 @@ public enum Unidade {
 	    }
 	}
 	throw new IllegalArgumentException("Código da Unidade de medida Inválida!");
-=======
-    public static Unidade valueOf(int codigo) {
-        for (Unidade value : Unidade.values()) {
-            if (value.getCodigo() == codigo) {
-                return value;
-            }
-        }
-        throw new IllegalArgumentException("Código da Unidade Inválida!");
->>>>>>> 42067fffd9bab8a55b039df3303ad05daaee3704
+    }
+
+    public static Unidade valueOf(int codigo)
+    {
+	for (Unidade value : Unidade.values())
+	{
+	    if (value.getCodigo() == codigo)
+	    {
+		return value;
+	    }
+	}
+	throw new IllegalArgumentException("Código da Unidade Inválida!");
     }
 
     /**
@@ -87,21 +91,19 @@ public enum Unidade {
      *
      * @return
      */
-<<<<<<< HEAD
     public ArrayList<Unidade> getEnumsUnidadade()
     {
 	ArrayList<Unidade> list = new ArrayList<>();
-
 	for (Unidade und : Unidade.values())
 	{
 	    list.add(und);
 	}
-
 	return list;
-=======
-    public ArrayList<Unidade> getLisUnidadade() {
-
-        return null;
->>>>>>> 42067fffd9bab8a55b039df3303ad05daaee3704
     }
+
+    public ArrayList<Unidade> getLisUnidadade()
+    {
+	return null;
+    }
+
 }
