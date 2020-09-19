@@ -18,7 +18,7 @@ public class UsuarioDAO extends DAO<Usuario> {
 
     @Override
     public void inserir(Usuario objeto) throws SQLException {
-        executarConsultaDML("INSERT INTO usuario (id, nome, login, senha, registro_ativo) VALUES (?,?, ?, ?, ?) ", objeto.getId(),objeto.getNome(), objeto.getLogin(), objeto.getSenha(), objeto.isAtivo());
+        executarConsultaDML("INSERT INTO usuario (nome, login, senha, registro_ativo) VALUES (?, ?, ?, ?) ",objeto.getNome(), objeto.getLogin(), objeto.getSenha(), objeto.isAtivo());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class UsuarioDAO extends DAO<Usuario> {
             e.setId(rs.getInt("id"));
             e.setNome(rs.getString("nome"));
             e.setLogin(rs.getString("login"));
-            e.setAtivo(rs.getShort("registro_ativo"));
+            e.setAtivo(rs.getBoolean("registro_ativo"));
 
             usuarios.add(e);
 

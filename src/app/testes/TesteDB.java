@@ -31,24 +31,24 @@ public class TesteDB {
        
        
         try {
-            Usuario usuario1 = new Usuario(2, "Alan Junior", "Alan", "123456", );
-            usuarios = usuarioDAO.listar();
-            System.out.println(usuarios.size());
-          
-            usuarioDAO.excluir(usuario1);
+            Usuario usuario1 = new Usuario("Dorival Farias", "Dorival", "123456",true);
             usuarios = usuarioDAO.listar();
             System.out.println(usuarios.size());
           
             usuarioDAO.inserir(usuario1);
             usuarios = usuarioDAO.listar();
             System.out.println(usuarios.size());
-           
             
+            /*          
+            usuarioDAO.excluir(usuario1);
+            usuarios = usuarioDAO.listar();
+            System.out.println(usuarios.size());
+           
             usuarios = usuarioDAO.listar();
             for (Usuario usuario : usuarios) {
             
             System.out.println(usuario);
-            }
+            }*/
             /*
             usuario1.setNome("Alan");
             usuarioDAO.alterar(usuario1);

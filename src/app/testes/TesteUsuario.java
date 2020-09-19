@@ -27,8 +27,8 @@ public class TesteUsuario
 	Permissao perm4 = new Permissao(4, "acesso na tela de cadastro de Alterar senha");
 
 	//CADASTRO DE USUARIOS:
-	Usuario user1 = new Usuario(1, "Jorge", "bahia", "12345", null);
-	Usuario user2 = new Usuario(1, "Andre", "lycyo", "12345", null);
+	Usuario user1 = new Usuario(1, "Jorge", "bahia", "12345", true);
+	Usuario user2 = new Usuario(1, "Andre", "lycyo", "12345", false);
 
 	System.out.println("-----------------------------");
 
