@@ -1,6 +1,6 @@
 
 CREATE TABLE public.usuario (
-                id INTEGER NOT NULL,
+                id SERIAL NOT NULL,
                 nome VARCHAR(80),
                 login VARCHAR(45),
                 senha VARCHAR NOT NULL,
