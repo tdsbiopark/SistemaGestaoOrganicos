@@ -31,35 +31,44 @@ public class TesteDB {
        
        
         try {
-            Usuario usuario1 = new Usuario("Dorival Farias", "Dorival", "123456",true);
-            usuarios = usuarioDAO.listar();
-            System.out.println(usuarios.size());
+            Usuario usuario1 = new Usuario("Administrador", "admin", "123456",true);
+            Usuario usuario2 = new Usuario("Alan Junior dos Santos", "alan", "123456",true);
+            Usuario usuario3 = new Usuario("Camila Toledo Ortega", "camila", "123456",false);
+            Usuario usuario4 = new Usuario("Dorival Farias dos Santos", "dorival", "123456",true);
           
-            usuarioDAO.inserir(usuario1);
+                                           
+                        
+            /* ---------- Excluir usuario ---------  */         
+            usuarioDAO.excluir(usuario4);
             usuarios = usuarioDAO.listar();
             System.out.println(usuarios.size());
             
-            /*          
-            usuarioDAO.excluir(usuario1);
+            /* ---------- inserir usuario --------- 
+            usuarioDAO.inserir(usuario4);
             usuarios = usuarioDAO.listar();
-            System.out.println(usuarios.size());
-           
+            System.out.println(usuarios.size());*/
+            
+            /* ---------- Editar Usuario --------- 
+            usuario1.setSenha("admin");
+            usuarioDAO.alterar(usuario4);*/
+            
+            /* ---------- Listar todos usarios --------- 
             usuarios = usuarioDAO.listar();
             for (Usuario usuario : usuarios) {
             
             System.out.println(usuario);
             }*/
-            /*
-            usuario1.setNome("Alan");
-            usuarioDAO.alterar(usuario1);
+           
             
-            usuarios = usuarioDAO.pesquisar("28");
+            /* ---------- Listar usuario por ID --------- 
+            
+            usuarios = usuarioDAO.pesquisar("1");
             System.out.println(" ---------------  ");
             for (Usuario usuario : usuarios) {
             
             System.out.println(usuario);
             }
-            */
+            */ 
  
             
             /*

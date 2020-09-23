@@ -23,12 +23,12 @@ public class UsuarioDAO extends DAO<Usuario> {
 
     @Override
     public void excluir(Usuario objeto) throws SQLException {
-        executarConsultaDML("DELETE FROM estado usuario id = ? ", objeto.getId());
+        executarConsultaDML("DELETE FROM  usuario WHERE id = ? ", objeto.getId());
     }
 
     @Override
     public void alterar(Usuario objeto) throws SQLException {
-        executarConsultaDML("UPDATE usuario SET nome = ?, login = ?, senha = ?, registro_ativo = ? where id = ? ", objeto.getNome(), objeto.getLogin(), objeto.getSenha(), objeto.isAtivo(), objeto.getId());
+        executarConsultaDML(" UPDATE usuario SET nome = ?, login = ?, senha = ?, registro_ativo = ? where id = ? ", objeto.getNome(), objeto.getLogin(), objeto.getSenha(), objeto.isAtivo(), objeto.getId());
     }
 
     @Override
