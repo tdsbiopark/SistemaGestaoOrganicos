@@ -34,41 +34,39 @@ public class TesteDB {
             Usuario usuario1 = new Usuario("Administrador", "admin", "123456",true);
             Usuario usuario2 = new Usuario("Alan Junior dos Santos", "alan", "123456",true);
             Usuario usuario3 = new Usuario("Camila Toledo Ortega", "camila", "123456",false);
-            Usuario usuario4 = new Usuario("Dorival Farias dos Santos", "dorival", "123456",true);
+            Usuario usuario4 = new Usuario(6,"Dorival Farias dos Santos", "dorival", "123456",true);
           
-                                           
                         
-            /* ---------- Excluir usuario ---------  */         
-            usuarioDAO.excluir(usuario4);
-            usuarios = usuarioDAO.listar();
-            System.out.println(usuarios.size());
-            
-            /* ---------- inserir usuario --------- 
+            /*---------- inserir usuario --------- 
             usuarioDAO.inserir(usuario4);
             usuarios = usuarioDAO.listar();
-            System.out.println(usuarios.size());*/
+            System.out.println(usuarios.size()); */
             
             /* ---------- Editar Usuario --------- 
-            usuario1.setSenha("admin");
+            usuario4.setSenha("admin");
             usuarioDAO.alterar(usuario4);*/
-            
-            /* ---------- Listar todos usarios --------- 
-            usuarios = usuarioDAO.listar();
-            for (Usuario usuario : usuarios) {
-            
-            System.out.println(usuario);
-            }*/
-           
-            
-            /* ---------- Listar usuario por ID --------- 
-            
-            usuarios = usuarioDAO.pesquisar("1");
+                      
+            /* ---------- Listar usuario por ID ---------       
+            usuarios = usuarioDAO.pesquisar("6");
             System.out.println(" ---------------  ");
             for (Usuario usuario : usuarios) {
             
             System.out.println(usuario);
-            }
-            */ 
+            }   */ 
+                                      
+            /* ---------- Excluir usuario ---------          
+            usuarioDAO.excluir(usuario4);
+            usuarios = usuarioDAO.listar();
+            System.out.println(usuarios.size());*/ 
+            
+            /* ---------- Listar todos usarios ---------*/
+            usuarios = usuarioDAO.listar();
+            for (Usuario usuario : usuarios) {
+            
+            System.out.println(usuario);
+            } 
+           
+
  
             
             /*
