@@ -1,10 +1,10 @@
 
 CREATE TABLE public.usuario (
-                id INTEGER NOT NULL,
+                id SERIAL NOT NULL,
                 nome VARCHAR(80),
                 login VARCHAR(45),
                 senha VARCHAR NOT NULL,
-                registro_ativo SMALLINT,
+                registro_ativo boolean,
                 CONSTRAINT id_12 PRIMARY KEY (id)
 );
 
