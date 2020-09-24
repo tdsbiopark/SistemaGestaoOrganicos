@@ -107,7 +107,7 @@ public class TipoProduto implements Serializable
     @Override
     public String toString()
     {
-	return "TipoProduto{" + "id=" + id + ", nome=" + nome + ", registro_ativo=" + registro_ativo + ", produto=" + produtos + '}';
+	return nome;
     }
     
     
