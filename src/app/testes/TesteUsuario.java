@@ -28,7 +28,7 @@ public class TesteUsuario
 
 	//CADASTRO DE USUARIOS:
 	Usuario user1 = new Usuario(1, "Jorge", "bahia", "12345", true);
-	Usuario user2 = new Usuario(1, "Andre", "lycyo", "12345", true);
+	Usuario user2 = new Usuario(1, "Andre", "lycyo", "12345", false);
 
 	System.out.println("-----------------------------");
 
