@@ -35,8 +35,8 @@ public class ProdutoDAO extends DAO<Produto>  {
     public ArrayList<Produto> pesquisar(String filtro) throws SQLException {
         ArrayList<Produto> retorno = new ArrayList<>();
         ResultSet resultadoConsulta = executarConsultaSQL(
-                "select * from produto where lower(nome) like ?",
-                "%" + filtro.trim().toLowerCase() + "%");
+                "select * from produto where lower(nome) = ?",
+                filtro.trim().toLowerCase());
         while (resultadoConsulta.next()) {
             Produto produto = new Produto();
             produto.setId(resultadoConsulta.getInt("id"));
@@ -58,6 +58,27 @@ public class ProdutoDAO extends DAO<Produto>  {
         ArrayList<Produto> retorno = new ArrayList<>();
         ResultSet resultadoConsulta = executarConsultaSQL(
                 "select * from produto");
+        while (resultadoConsulta.next()) {
+            Produto produto = new Produto();
+            produto.setId(resultadoConsulta.getInt("id"));
+            produto.setNome(resultadoConsulta.getString("nome"));
+            produto.setDescricao(resultadoConsulta.getString("descricao"));
+            produto.setPreco_unitario(resultadoConsulta.getDouble("preco_unitario"));
+            produto.setRegistro_ativo(resultadoConsulta.getBoolean("registro_ativo"));
+            produto.setTipoproduto(new TipoProdutoDAO().buscarPorId(resultadoConsulta.getInt("tipoproduto_id")));
+            produto.setUnidade(Unidade.valueOf(resultadoConsulta.getInt("unidade")));
+            
+            retorno.add(produto);
+        }
+
+        return retorno;
+    }
+    
+    public ArrayList<Produto> pesquisaPorTexto(String filtro) throws SQLException {
+        ArrayList<Produto> retorno = new ArrayList<>();
+        ResultSet resultadoConsulta = executarConsultaSQL(
+                "select * from produto where lower(nome) ilike ?",
+            "%" + filtro.trim().toLowerCase()+ "%");
         while (resultadoConsulta.next()) {
             Produto produto = new Produto();
             produto.setId(resultadoConsulta.getInt("id"));

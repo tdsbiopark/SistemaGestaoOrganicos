@@ -90,7 +90,12 @@ public class Produto implements Serializable
     // converte o codigo para o enum
     public Unidade getUnidade()
     {
-	return Unidade.valueOf(unidade);
+        if (unidade != null)
+	{
+            return Unidade.valueOf(unidade);
+        } else {
+            return null;
+        }
     }
 
     // recebe um enum e grava o codigo

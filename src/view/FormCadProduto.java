@@ -6,7 +6,12 @@
 package view;
 
 import controler.ProdutoControler;
+import java.awt.TrayIcon;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
 import model.entidades.Produto;
 import model.entidades.TipoProduto;
 import model.entidades.enums.Unidade;
@@ -27,8 +32,8 @@ public class FormCadProduto extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-//        setUMCombo();
-//        setTipoProdutoCombo();
+        setUMCombo();
+        setTipoProdutoCombo();
         
           
     }
@@ -248,6 +253,11 @@ public class FormCadProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+        novo();
+        
+    }//GEN-LAST:event_jbNovoActionPerformed
+
+    private void novo() {
         // TODO add your handling code here:
         produto = new Produto();
         jtfDescricaoProduto.setText("");
@@ -256,19 +266,30 @@ public class FormCadProduto extends javax.swing.JFrame {
         jcbUnidadeProduto.setSelectedIndex(0);
         jcbTipoProduto.setSelectedIndex(0);
         jchbProdutoAtivo.setSelected(true);
-        
-    }//GEN-LAST:event_jbNovoActionPerformed
+    }
 
     private void jbGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGravarActionPerformed
         // TODO add your handling code here:
         produto.setDescricao(jtfDescricaoProduto.getText());
         produto.setNome(jtfNomeProduto.getText());
-        produto.setPreco_unitario(Double.parseDouble(jtfPrecoProduto.getText()));
-        produto.setUnidade((Unidade) jcbUnidadeProduto.getSelectedItem());
-        produto.setTipoproduto((TipoProduto) jcbTipoProduto.getSelectedItem());
+        if (jtfPrecoProduto.getText() != null && !jtfPrecoProduto.getText().trim().isEmpty()){ 
+            produto.setPreco_unitario(Double.parseDouble(jtfPrecoProduto.getText()));
+        }
+        if (jcbUnidadeProduto.getSelectedItem() != null){
+            produto.setUnidade((Unidade) jcbUnidadeProduto.getSelectedItem());
+        }
+        if (jcbTipoProduto.getSelectedItem() != null){
+            produto.setTipoproduto((TipoProduto) jcbTipoProduto.getSelectedItem());
+        }
         produto.setRegistro_ativo(jchbProdutoAtivo.isSelected());
         
-        produtoControler.gravar(produto);
+        try {
+            produtoControler.gravar(produto);
+            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso", "Sucesso!", TrayIcon.MessageType.INFO.ordinal());
+            novo();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Erro:", TrayIcon.MessageType.ERROR.ordinal());
+        }
     }//GEN-LAST:event_jbGravarActionPerformed
 
     /**

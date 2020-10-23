@@ -48,13 +48,42 @@ public class ProdutoControler {
         this.listaTipoProduto = listaTipoProduto;
     }
     
-    public void gravar(Produto produto){
+    public void gravar(Produto produto) throws Exception{
+        validar(produto);
         try {
             produtoDAO.inserir(produto);
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("Ocorreu um erro inesperado ao tentar gravar o produto! Erro: "+ex.getMessage());
         }
     }
     
+    public void validar(Produto produto) throws Exception{
+        if (produto.getNome() == null || produto.getNome().trim().isEmpty()){ 
+            throw new Exception("O nome do produto não pode ser nulo!");
+        }
+        if (produto.getPreco_unitario() == null || produto.getPreco_unitario() <= 0){ 
+            throw new Exception("O preço do produto deve ser maior que Zero!");
+        }
+        if (produto.getUnidade() == null){ 
+            throw new Exception("A unidade do produto não pode ser nula!");
+        }
+        if (produto.getTipoproduto() == null){ 
+            throw new Exception("O tipo do produto não pode ser nulo!");
+        }
+        ArrayList<Produto> produtosCadastrados = produtoDAO.pesquisar(produto.getNome());
+        if (produtosCadastrados != null && !produtosCadastrados.isEmpty()){
+            throw  new Exception("Produto já cadastrado com este nome!");
+        }
+    }
+    
+    public ArrayList<Produto> pesquisaPorTexto(String filtro) {
+        try {
+            return produtoDAO.pesquisaPorTexto(filtro);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return new ArrayList<>();
+    }
     
 }
