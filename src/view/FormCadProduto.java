@@ -56,6 +56,7 @@ public class FormCadProduto extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jpInformacoesProduto = new javax.swing.JPanel();
         jtfPrecoProduto = new javax.swing.JTextField();
@@ -71,14 +72,14 @@ public class FormCadProduto extends javax.swing.JFrame {
         jcbUnidadeProduto = new javax.swing.JComboBox<>();
         jchbProdutoAtivo = new javax.swing.JCheckBox();
         jpAcoes = new javax.swing.JPanel();
+        jbNovo = new javax.swing.JButton();
         jbExcluir = new javax.swing.JButton();
-        jbAtualizar = new javax.swing.JButton();
         jbEditar = new javax.swing.JButton();
         jbGravar = new javax.swing.JButton();
-        jbNovo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Produtos");
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jpInformacoesProduto.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -127,6 +128,14 @@ public class FormCadProduto extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 419;
+        gridBagConstraints.ipady = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(jpInformacoesProduto, gridBagConstraints);
+
         jpInformacoesCombo.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -174,24 +183,17 @@ public class FormCadProduto extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.ipady = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 0);
+        getContentPane().add(jpInformacoesCombo, gridBagConstraints);
+
         jpAcoes.setBackground(new java.awt.Color(255, 255, 255));
-
-        jbExcluir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbExcluir.setText("EXCLUIR");
-
-        jbAtualizar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbAtualizar.setText("ATUALIZAR");
-
-        jbEditar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbEditar.setText("EDITAR");
-
-        jbGravar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbGravar.setText("GRAVAR");
-        jbGravar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbGravarActionPerformed(evt);
-            }
-        });
+        jpAcoes.setLayout(new java.awt.GridLayout());
 
         jbNovo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbNovo.setText("NOVO");
@@ -200,54 +202,42 @@ public class FormCadProduto extends javax.swing.JFrame {
                 jbNovoActionPerformed(evt);
             }
         });
+        jpAcoes.add(jbNovo);
 
-        javax.swing.GroupLayout jpAcoesLayout = new javax.swing.GroupLayout(jpAcoes);
-        jpAcoes.setLayout(jpAcoesLayout);
-        jpAcoesLayout.setHorizontalGroup(
-            jpAcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpAcoesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbGravar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jpAcoesLayout.setVerticalGroup(
-            jpAcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpAcoesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jpAcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbGravar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        jbExcluir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbExcluir.setText("EXCLUIR");
+        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirActionPerformed(evt);
+            }
+        });
+        jpAcoes.add(jbExcluir);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpInformacoesProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpInformacoesCombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpAcoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jpInformacoesProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jpInformacoesCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jpAcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jbEditar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbEditar.setText("EDITAR");
+        jbEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEditarActionPerformed(evt);
+            }
+        });
+        jpAcoes.add(jbEditar);
+
+        jbGravar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbGravar.setText("GRAVAR");
+        jbGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGravarActionPerformed(evt);
+            }
+        });
+        jpAcoes.add(jbGravar);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 226;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(55, 0, 0, 0);
+        getContentPane().add(jpAcoes, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,6 +282,31 @@ public class FormCadProduto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbGravarActionPerformed
 
+    private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
+        // TODO add your handling code here:
+        new FormBuscaProduto(this).setVisible(true);
+    }//GEN-LAST:event_jbEditarActionPerformed
+
+    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
+        // TODO add your handling code here:
+        try {
+            produtoControler.excluir(produto);
+            JOptionPane.showMessageDialog(this, "Produto removido com sucesso", "Sucesso!", TrayIcon.MessageType.INFO.ordinal());
+            novo();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Erro:", TrayIcon.MessageType.ERROR.ordinal());
+        }
+    }//GEN-LAST:event_jbExcluirActionPerformed
+
+    public void preencherProdutoSelecionado(Integer idSelecionado){
+       produto = produtoControler.pesquisaPorId(idSelecionado);
+       jtfNomeProduto.setText(produto.getNome());
+       jtfDescricaoProduto.setText(produto.getDescricao());
+       jtfPrecoProduto.setText(String.valueOf(produto.getPreco_unitario()));
+       jcbUnidadeProduto.setSelectedItem(produto.getUnidade());
+       jcbTipoProduto.setSelectedItem(produto.getTipoproduto());
+       jchbProdutoAtivo.setSelected(produto.isRegistro_ativo());
+    }
     /**
      * @param args the command line arguments
      */
@@ -333,7 +348,6 @@ public class FormCadProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton jbAtualizar;
     private javax.swing.JButton jbEditar;
     private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbGravar;

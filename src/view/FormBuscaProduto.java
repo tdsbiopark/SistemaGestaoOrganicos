@@ -6,6 +6,7 @@
 package view;
 
 import controler.ProdutoControler;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.entidades.Produto;
@@ -15,14 +16,20 @@ import model.entidades.Produto;
  * @author jonasidney
  */
 public class FormBuscaProduto extends javax.swing.JFrame {
-
-    private Produto produto = new Produto();
+    
     private ProdutoControler produtoControler = new ProdutoControler();
+    private FormCadProduto parent;
+    private Integer idSelecionado;
+
+    public Integer getIdSelecionado() {
+        return idSelecionado;
+    }
     /**
      * Creates new form FormBuscaProduto
      */
-    public FormBuscaProduto() {
+    public FormBuscaProduto(FormCadProduto parent) {
         initComponents();
+        this.parent = parent;
     }
 
     /**
@@ -55,14 +62,14 @@ public class FormBuscaProduto extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Descricao", "Preço", "Unidade", "Tipo", "Status"
+                "ID", "Nome", "Descricao", "Preço", "Unidade", "Tipo", "Status", "Data"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -73,23 +80,33 @@ public class FormBuscaProduto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtbPesquisaProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtbPesquisaProdutoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtbPesquisaProduto);
 
-        jbtnPesquisaProduto.setText("Buscar");
+        jbtnPesquisaProduto.setText("Selecionar");
+        jbtnPesquisaProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnPesquisaProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jtfPesquisaProduto)
-                        .addComponent(jbtnPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtfPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 878, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 858, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,9 +117,9 @@ public class FormBuscaProduto extends javax.swing.JFrame {
                 .addComponent(jtfPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addComponent(jbtnPesquisaProduto)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,55 +133,37 @@ public class FormBuscaProduto extends javax.swing.JFrame {
             if (pesquisaProdutoPorTexto != null && !pesquisaProdutoPorTexto.isEmpty()){
                 DefaultTableModel model = (DefaultTableModel) jtbPesquisaProduto.getModel();
                 model.setNumRows(0);
-
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 for (Produto produto : pesquisaProdutoPorTexto) {
                     model.addRow(new Object[]{
+                        produto.getId(),
                         produto.getNome(),
                         produto.getDescricao(),
                         produto.getPreco_unitario(),
                         produto.getUnidade(),
                         produto.getTipoproduto(),
-                        produto.isRegistro_ativo()
+                        produto.isRegistro_ativo(),
+                        sdf.format(produto.getDataRegistro())
                     });
                 }
             }
         }    
     }//GEN-LAST:event_jtfPesquisaProdutoKeyPressed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormBuscaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormBuscaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormBuscaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormBuscaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jbtnPesquisaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPesquisaProdutoActionPerformed
+        // TODO add your handling code here:
+        parent.preencherProdutoSelecionado(idSelecionado);
+        this.dispose();
+    }//GEN-LAST:event_jbtnPesquisaProdutoActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormBuscaProduto().setVisible(true);
-            }
-        });
-    }
+    private void jtbPesquisaProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbPesquisaProdutoMouseClicked
+        // TODO add your handling code here:
+        if (jtbPesquisaProduto.getSelectedRow() != -1){
+            idSelecionado = (Integer) jtbPesquisaProduto.getValueAt(jtbPesquisaProduto.getSelectedRow(), 0);
+        }
+    }//GEN-LAST:event_jtbPesquisaProdutoMouseClicked
+
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

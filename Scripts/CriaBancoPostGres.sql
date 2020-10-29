@@ -25,6 +25,7 @@ CREATE TABLE public.produto (
                 preco_unitario NUMERIC(14,2),
                 unidade INTEGER NOT NULL,
                 registro_ativo SMALLINT,
+                data_registro TIMESTAMP WITHOUT TIME ZONE,
                 CONSTRAINT id_7 PRIMARY KEY (id)
 );
 

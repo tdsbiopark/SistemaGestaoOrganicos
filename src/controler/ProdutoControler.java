@@ -51,10 +51,23 @@ public class ProdutoControler {
     public void gravar(Produto produto) throws Exception{
         validar(produto);
         try {
-            produtoDAO.inserir(produto);
+            if (produto.getId() == null ){
+                produtoDAO.inserir(produto);
+            } else {
+                produtoDAO.alterar(produto);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Ocorreu um erro inesperado ao tentar gravar o produto! Erro: "+ex.getMessage());
+        }
+    }
+    
+    public void excluir(Produto produto) throws Exception{
+        try {
+            produtoDAO.excluir(produto);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("Ocorreu um erro inesperado ao tentar Excluir o produto! Erro: "+ex.getMessage());
         }
     }
     
@@ -84,6 +97,15 @@ public class ProdutoControler {
             Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
         }
         return new ArrayList<>();
+    }
+    
+    public Produto pesquisaPorId(Integer id){
+        try {
+            return produtoDAO.pesquisaPorId(id);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoControler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }

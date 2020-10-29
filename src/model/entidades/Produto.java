@@ -7,6 +7,7 @@ package model.entidades;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 import model.entidades.enums.Unidade;
 
@@ -16,7 +17,7 @@ import model.entidades.enums.Unidade;
  */
 public class Produto implements Serializable
 {
-    private int id;    
+    private Integer id;    
     
     private String nome;
     private String descricao;
@@ -29,13 +30,15 @@ public class Produto implements Serializable
     
     private TipoProduto tipoproduto;
     
+    private Date dataRegistro;
+    
     private ArrayList<ProdutorProduto> ProdutorProdutos = new ArrayList<ProdutorProduto>();
 
     public Produto()
     {
     }
 
-    public Produto(int id, String nome, String descricao, Double preco_unitario, Unidade unidade, boolean registro_ativo, TipoProduto tipoproduto)
+    public Produto(Integer id, String nome, String descricao, Double preco_unitario, Unidade unidade, boolean registro_ativo, TipoProduto tipoproduto)
     {
 	this.id = id;
 	this.nome = nome;
@@ -47,12 +50,20 @@ public class Produto implements Serializable
 	this.tipoproduto = tipoproduto;
     }
 
-    public int getId()
+    public Date getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public void setDataRegistro(Date dataRegistro) {
+        this.dataRegistro = dataRegistro;
+    }
+
+    public Integer getId()
     {
 	return id;
     }
 
-    public void setId(int id)
+    public void setId(Integer id)
     {
 	this.id = id;
     }
