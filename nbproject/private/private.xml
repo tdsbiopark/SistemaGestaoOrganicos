@@ -8,10 +8,11 @@
         <group>
             <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/controler/ProdutoControler.java</file>
             <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/model/dao/ProdutoDAO.java</file>
-            <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/model/entidades/TipoProduto.java</file>
             <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/view/FormCadProduto.java</file>
             <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/view/FormBuscaProduto.java</file>
+            <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/Scripts/CriaBancoPostGres.sql</file>
             <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/model/entidades/Produto.java</file>
+            <file>file:/D:/_IFPR_BIOPARK/ORGANICOS/SistemaGestaoOrganicos/src/model/dao/DAO.java</file>
         </group>
     </open-files>
 </project-private>
